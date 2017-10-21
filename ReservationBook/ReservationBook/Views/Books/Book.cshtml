@@ -1,0 +1,24 @@
+﻿@model IEnumerable<ReservationBook.Models.Books>
+@{
+    ViewBag.Title = "Books";
+}
+
+@Html.ActionLink("Add", "AddBook")
+@foreach (var item in Model)
+{
+    <br />
+    <br />
+    @Html.DisplayFor(a => item.BookId);
+    <br/>
+     @Html.DisplayFor(a => item.Title);
+    <br/>
+     @Html.DisplayFor(a => item.Author);
+    <br/>
+     @Html.DisplayFor(a => item.Quantity);
+    <br/>
+    @Html.ActionLink("Edit", "EditBook", new { bookID = item.BookId })
+        <br />
+    @Html.ActionLink("Delete", "DeleteBook", new { id = item.BookId })                                                                                       
+}
+<br />
+ @Html.ActionLink("<---- Go Back", "toHomePage") 

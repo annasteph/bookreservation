@@ -1,0 +1,20 @@
+﻿@model ReservationBook.Models.Books
+
+@using (Html.BeginForm("SaveBook", "Books"))
+{
+    @Html.LabelFor(bb=>bb.BookId)
+    @Html.EditorFor(bb => bb.BookId)
+    <br />
+    @Html.LabelFor(bb => bb.Title)
+    @Html.EditorFor(bb => bb.Title)
+    <br />
+    @Html.LabelFor(bb => bb.Author)
+    @Html.EditorFor(bb => bb.Author)
+  <br />
+     @Html.LabelFor(bb => bb.Quantity)
+    @Html.EditorFor(bb => bb.Quantity)
+  <br />
+    <button type="submit">Edit</button>
+    <br />
+    @Html.ActionLink("<----  Go Back", "Books")
+}
